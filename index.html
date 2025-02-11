@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Happy 20th Birthday, My Love! 💖</title>
+    <style>
+        /* Animated Background */
+        @keyframes gradientBG {
+            0% { background: linear-gradient(to right, #ff758c, #ff7eb3); }
+            50% { background: linear-gradient(to right, #ff7eb3, #ff758c); }
+            100% { background: linear-gradient(to right, #ff758c, #ff7eb3); }
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            animation: gradientBG 5s infinite alternate ease-in-out;
+            color: white;
+            padding: 20px;
+            margin: 0;
+            /* Allow scrolling if content overflows */
+            overflow-x: hidden;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Title Styling */
+        h1 {
+            font-size: 3em;
+            animation: glow 1.5s infinite alternate;
+            text-shadow: 0 0 20px white;
+        }
+
+        /* Glow Animation */
+        @keyframes glow {
+            from { text-shadow: 0 0 10px white; }
+            to { text-shadow: 0 0 30px yellow; }
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            font-size: 1.5em;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* Responsive Content Layout */
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 20px;
+            width: 90%;
+            max-width: 800px;
+            min-height: 100vh;
+        }
+
+        /* Adjust layout for tablets and larger screens */
+        @media (min-width: 768px) {
+            .content-container {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+
+        /* Message Box */
+        .message-container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            font-size: 1.3em;
+            font-weight: bold;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .message-container.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Centered Photo */
+        #surprisePhoto {
+            display: none;
+            width: 280px;
+            max-width: 90%;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        #surprisePhoto.show {
+            display: block;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Clickable Emojis */
+        .emoji-container {
+            margin-top: 20px;
+        }
+
+        .emoji {
+            font-size: 100px;
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.2s;
+        }
+
+        .emoji:hover {
+            transform: scale(1.2);
+        }
+
+        /* Falling Emojis */
+        .falling {
+            position: absolute;
+            font-size: 100px;
+            animation: fall 3s linear forwards;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+
+        /* Confetti Effect */
+        .confetti {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: yellow;
+            border-radius: 50%;
+            animation: confettiFall 3s ease-out forwards;
+            transform: rotate(0deg);
+        }
+
+        .confetti.square {
+            border-radius: 0;
+        }
+
+        .confetti.star {
+            width: 12px;
+            height: 12px;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            background: gold;
+        }
+
+        @keyframes confettiFall {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Button */
+        .button {
+            background: linear-gradient(45deg, #ff4d6d, #ff7eb3);
+            color: white;
+            padding: 12px 25px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:hover {
+            background: linear-gradient(45deg, #ff2e63, #ff4d6d);
+            transform: scale(1.08);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>🎉 Happy 20teen Birthday, My Love! 💖</h1>
+
+    <!-- Live Countdown Timer -->
+    <p id="countdown" class="countdown"></p>
+
+    <div class="content-container">
+        <div id="messageContainer" class="message-container">
+            <p>
+                My love, today is so special because it marks <strong>20 incredible years</strong> of you.  
+                The most <strong>amazing, kind, and beautiful soul</strong> I’ve ever known.  
+                <br><br>
+                Every moment with you fills my heart with <strong>happiness</strong>,  
+                and I’m endlessly grateful to have you by my side.  
+                <br><br>
+                Thank you for being my <strong>best friend</strong>,  
+                my <strong>safe place</strong>, and my <strong>greatest love</strong>.  
+                <br><br>
+                You make my world <strong>brighter</strong> with your smile, your laughter, and your love.  
+                I cherish every second with you and can’t wait to create even more <strong>unforgettable memories</strong> together.  
+                <br><br>
+                Happy <strong>20teen</strong>, my love!  
+                (Because yes, you still insist you’re a teen even though we’re the same age. 😆)  
+                <br><br>
+                Here’s to another year of <strong>love, joy, and endless adventures</strong>!  
+                I love you more than words can say. ❤️🎂🎉  
+                <br><br>
+                <strong>Forever yours, Ty (Favorite person in the whole world) 💖</strong>
+            </p>
+        </div>
+    </div>
+
+    <!-- Surprise Photo -->
+<img id="surprisePhoto" src="https://raw.githubusercontent.com/TyronePonce/tyluvsdee/main/IMG_6777.jpeg" alt="Our Photo">
+
+
+    <div class="emoji-container">
+        <span class="emoji" onclick="fallEmojis('🎂')">🎂</span>
+        <span class="emoji" onclick="fallEmojis('❤️')">❤️</span>
+        <span class="emoji" onclick="fallEmojis('🎆')">🎆</span>
+    </div>
+
+    <!-- Button to trigger the music -->
+    <button class="button" onclick="playSurprise()">Click Here for a Surprise! 🎵</button>
+
+    <!-- Initially without src to prevent autoplay -->
+    <audio id="birthdayMusic" src="https://raw.githubusercontent.com/TyronePonce/tyluvsdee/main/birthday_song.mp3"></audio>
+
+
+    <script>
+        function playSurprise() {
+    var audio = document.getElementById("birthdayMusic");
+    var photo = document.getElementById("surprisePhoto");
+    var messageContainer = document.getElementById("messageContainer");
+
+    // Play the birthday song
+    audio.play().catch(error => console.error("Error playing audio:", error));
+
+    // Show the photo and message
+    photo.classList.add("show");
+    messageContainer.classList.add("show");
+
+    // Hide photo when music ends
+    audio.onended = function () {
+        photo.classList.remove("show");
+    };
+}
+
+
+
+
+        function fallEmojis(emoji) {
+            for (let i = 0; i < 10; i++) {
+                let emojiElement = document.createElement("div");
+                emojiElement.innerHTML = emoji;
+                emojiElement.className = "falling";
+                emojiElement.style.left = Math.random() * 90 + "vw";
+                document.body.appendChild(emojiElement);
+                setTimeout(() => emojiElement.remove(), 3000);
+            }
+        }
+
+        function updateCountdown() {
+            setInterval(() => {
+                const now = new Date().getTime();
+                const eventDate = new Date("February 24, 2025 00:00:00").getTime();
+                const difference = eventDate - now;
+
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById("countdown").innerHTML = `🎂 ${days}d ${hours}h ${minutes}m ${seconds}s until your birthday, baby! 🎉`;
+            }, 1000);
+        }
+
+        updateCountdown();
+    </script>
+</body>
+</html>

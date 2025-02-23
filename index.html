@@ -218,8 +218,46 @@
         </div>
     </div>
 
-    <!-- Surprise Photo -->
-<img id="surprisePhoto" src="https://raw.githubusercontent.com/TyronePonce/tyluvsdee/main/IMG_6777.jpeg" alt="Our Photo">
+<div class="slideshow-container">
+    <img class="slides" src="https://raw.githubusercontent.com/TyronePonce/tyluvsdee/main/IMG_6777.jpeg" alt="Photo 1">
+    <img class="slides" src="https://raw.githubusercontent.com/TyronePonce/tyluvsdee/main/photo2.jpeg" alt="Photo 2">
+    <img class="slides" src="https://raw.githubusercontent.com/TyronePonce/tyluvsdee/main/photo3.jpeg" alt="Photo 3">
+    <img class="slides" src="https://raw.githubusercontent.com/TyronePonce/tyluvsdee/main/photo4.jpeg" alt="Photo 4">
+    <img class="slides" src="https://raw.githubusercontent.com/TyronePonce/tyluvsdee/main/photo5.jpeg" alt="Photo 5">
+    <img class="slides" src="https://raw.githubusercontent.com/TyronePonce/tyluvsdee/main/photo6.jpeg" alt="Photo 6">
+    <img class="slides" src="https://raw.githubusercontent.com/TyronePonce/tyluvsdee/main/photo7.jpeg" alt="Photo 7">
+    <img class="slides" src="https://raw.githubusercontent.com/TyronePonce/tyluvsdee/main/photo8.jpeg" alt="Photo 8">
+    <img class="slides" src="https://raw.githubusercontent.com/TyronePonce/tyluvsdee/main/photo9.jpeg" alt="Photo 9">
+    <img class="slides" src="https://raw.githubusercontent.com/TyronePonce/tyluvsdee/main/photo10.jpeg" alt="Photo 10">
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<script>
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slides");
+
+    function showSlides() {
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+
+    function plusSlides(n) {
+        slideIndex += n - 1;
+        if (slideIndex < 0) { slideIndex = slides.length - 1; }
+        showSlides();
+    }
+
+    // Initialize slideshow
+    showSlides();
+</script>
+
 
 
     <div class="emoji-container">
